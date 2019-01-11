@@ -1,16 +1,24 @@
+//
+//  ViewController.swift
+//  Todo0ey
+//
+//  Created by tong chern haw on 9/1/19.
+//  Copyright © 2019 tong chern haw. All rights reserved.
+//
+
 import UIKit
 
 class ToDoListViewController: UITableViewController {
     
     var itemArray = ["Sleep well", "Eat Breakfast", "Read Bible"]
  
-    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //TODO: Set yourself as the delegate and datasource here:
-
+        itemArray = defaults.array(forKey: "TodoListArray") as! [String]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -57,7 +65,7 @@ class ToDoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default)  {(action) in
             print("Success!")
             self.itemArray.append(textField.text!)
-            //print (textField.text)
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
             self.tableView.reloadData()
             
         }
