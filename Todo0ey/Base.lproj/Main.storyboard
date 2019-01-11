@@ -28,7 +28,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo0ey" id="Avj-73-e95"/>
+                    <navigationItem key="navigationItem" title="Todo0ey" id="Avj-73-e95">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="v0c-vO-bwZ">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="vuL-ZB-RFI" id="i3T-eN-Tav"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3F-vn-u1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
